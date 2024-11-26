@@ -1,0 +1,107 @@
+/* Configuração Geral */
+body {
+    margin: 0;
+    font-family: 'Roboto', Arial, sans-serif;
+    background: url('fundo.gif') no-repeat center center fixed;
+    background-size: cover;
+    color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: auto; /* Para permitir rolagem em conteúdo maior que a tela */
+}
+
+/* Efeito de fundo com sobreposição */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(20, 20, 20, 0.8); /* Sobreposição cinza escura */
+    z-index: -1;
+}
+
+/* Caixa Principal */
+.box {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    padding: 40px 30px;
+    width: 90%;
+    max-width: 700px;
+    text-align: center;
+    color: #ffdc00; /* Amarelo chamativo */
+    animation: fadeIn 1.5s ease-in-out;
+    border: 1px solid rgba(255, 220, 0, 0.8);
+}
+
+/* Títulos */
+.box h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #ffdc00;
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.9);
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Parágrafo */
+.box p {
+    font-size: 1.2em;
+    margin: 10px 0;
+    color: #f5f5f5;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
+}
+
+/* Links (Botões) */
+.box a {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 1.2em;
+    color: #333;
+    background: #ffdc00;
+    padding: 12px 25px;
+    border-radius: 30px;
+    margin: 15px 0;
+    transition: all 0.3s ease-in-out;
+    font-weight: bold;
+    box-shadow: 0 8px 15px rgba(255, 220, 0, 0.5);
+}
+
+.box a:hover {
+    background: #ffd700;
+    color: #222;
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px rgba(255, 220, 0, 0.7);
+}
+
+/* Imagens */
+.box img {
+    width: 80px; /* Ajusta o tamanho das imagens */
+    height: 80px; /* Garantindo que todas sejam do mesmo tamanho */
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 220, 0, 0.8);
+    transition: transform 0.3s ease-in-out;
+}
+
+.box img:hover {
+    transform: scale(1.1); /* Aumenta um pouco ao passar o mouse */
+}
+
+/* Animação de fade-in */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
